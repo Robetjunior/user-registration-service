@@ -8,24 +8,33 @@ const SECRET_KEY = 'minha-chave-secreta';
 exports.createUser = async (userData) => {
   const { cpf, senha } = userData;
 
+  console.log('Tentando criar usuário com CPF:', cpf);
+
   // Verificar se o CPF já está registrado
   const existingUser = await User.findOne({ where: { cpf } });
   if (existingUser) {
+    console.error('Erro: CPF já cadastrado:', cpf);
     throw new Error('CPF já cadastrado');
   }
 
   // Criptografar a senha, se fornecida
-  const hashedPassword = senha ? await bcrypt.hash(senha, 10) : null;
+  try {
+    const hashedPassword = senha ? await bcrypt.hash(senha, 10) : null;
 
-  const user = await User.create({
-    ...userData,
-    senha: hashedPassword,
-    status: 'Ativo',
-    data_criacao: new Date(),
-    usuario_criacao: 'Sistema',
-  });
+    const user = await User.create({
+      ...userData,
+      senha: hashedPassword,
+      status: 'Ativo',
+      data_criacao: new Date(),
+      usuario_criacao: 'Sistema',
+    });
 
-  return user;
+    console.log('Usuário criado com sucesso:', user.id);
+    return user;
+  } catch (error) {
+    console.error('Erro ao criar usuário:', error.message);
+    throw new Error('Erro ao criar usuário');
+  }
 };
 
 exports.authenticateUser = async (cpf, senha) => {

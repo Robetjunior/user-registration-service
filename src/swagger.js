@@ -1,73 +1,29 @@
-const swaggerJsdoc = require('swagger-jsdoc');
+// src/swagger.js
+const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 
-const options = {
+const swaggerOptions = {
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'API de Gerenciamento de Usuários',
+      title: 'API Teste Técnico Sírio-Libanês',
       version: '1.0.0',
-      description: 'Documentação da API para o gerenciamento de usuários',
+      description: 'Documentação da API',
     },
     servers: [
       {
-        url: 'http://localhost:8080/api',
-        description: 'Servidor local',
-      },
-    ],
-    components: {
-      schemas: {
-        User: {
-          type: 'object',
-          required: ['cpf', 'nome', 'data_nascimento', 'senha'],
-          properties: {
-            cpf: { type: 'string' },
-            nome: { type: 'string' },
-            data_nascimento: { type: 'string', format: 'date' },
-            senha: { type: 'string' },
-            endereco_rua: { type: 'string' },
-            endereco_numero: { type: 'string' },
-            endereco_complemento: { type: 'string' },
-            endereco_bairro: { type: 'string' },
-            endereco_cidade: { type: 'string' },
-            endereco_estado: { type: 'string' },
-            endereco_cep: { type: 'string' },
-            status: { type: 'string', enum: ['Ativo', 'Removido'] },
-          },
-        },
-        AuthResponse: {
-          type: 'object',
-          properties: {
-            message: { type: 'string' },
-            token: { type: 'string' },
-          },
-        },
-      },
-      securitySchemes: {
-        bearerAuth: {
-          type: 'http',
-          scheme: 'bearer',
-          bearerFormat: 'JWT',
-        },
-      },
-    },
-    security: [
-      {
-        bearerAuth: [],
+        url: 'http://localhost:8080',
+        description: 'Servidor Local',
       },
     ],
   },
-  apis: ['./src/routes/*.js'],
+  apis: ['./src/routes/*.js'], // Caminho para as rotas que serão documentadas
 };
 
-const swaggerSpec = swaggerJsdoc(options);
+const swaggerDocs = swaggerJsDoc(swaggerOptions);
 
 function setupSwagger(app) {
-    app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-    app.get('/api-docs.json', (req, res) => {
-      res.setHeader('Content-Type', 'application/json');
-      res.send(swaggerSpec);
-    });
+  app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 }
-  
-  module.exports = setupSwagger;
+
+module.exports = setupSwagger;
