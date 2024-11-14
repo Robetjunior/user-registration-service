@@ -43,6 +43,13 @@ SECRET_KEY=minha-chave-secreta
 ```
 npm run dev
 ```
+## Documentação no Swagger
+Para acessar a documentação interativa da API, utilize o Swagger UI disponível no seguinte endpoint:
+```
+http://localhost:8080/api-docs
+```
+Através desta interface, você pode explorar e testar os endpoints da API de forma intuitiva.
+
 
 ## Endpoints da API
 
