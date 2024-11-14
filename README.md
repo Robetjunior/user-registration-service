@@ -12,7 +12,8 @@ API RESTful para gerenciamento de usuários utilizando Node.js, Express, Sequeli
 - bcryptjs
 - express-validator
 - Amazon Web Services (AWS)
- - Amazon RDS (Relational Database Service)
+- Amazon RDS (Relational Database Service)
+- Supertest (biblioteca para testes de APIs)
 
 ## Requisitos
 - Node.js (versão 14 ou superior)
