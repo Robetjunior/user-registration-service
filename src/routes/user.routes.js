@@ -90,7 +90,7 @@ router.post('/users/create', validateUser, userController.createUser);
  *       200:
  *         description: Lista de usuários
  */
-router.get('/users', verifyToken, userController.findAllUsers);
+router.get('/users',  userController.findAllUsers);
 
 /**
  * @swagger
@@ -139,7 +139,7 @@ router.get('/users/:id', verifyToken, userController.findById);
  *       200:
  *         description: Usuário atualizado com sucesso
  */
-router.put('/users/:id', verifyToken, userController.updateUser);
+router.put('/users/:id', userController.updateUser);
 
 /**
  * @swagger

@@ -42,7 +42,7 @@ SECRET_KEY=minha-chave-secreta
 ```
 4. **Execute a Aplicação**
 ```
-npm run dev
+npm run start
 ```
 ## Documentação da API (Swagger)
 A documentação da API está disponível através do Swagger. Para acessá-la, siga os passos:
@@ -65,6 +65,35 @@ Utilize a interface do Swagger para explorar os endpoints e testar a API de form
 - **GET** `/api/users/:id` - Buscar usuário por ID
 - **PUT** `/api/users/:id` - Atualizar usuário
 - **DELETE** `/api/users/:id` - Remover usuário
+
+## Testes Automatizados
+
+Este projeto inclui testes automatizados utilizando **Jest** e **Supertest** para garantir o correto funcionamento das funcionalidades da API.
+
+### Como Executar os Testes
+
+Certifique-se de que você tem todas as dependências instaladas e que o ambiente de banco de dados está configurado corretamente.
+
+Para rodar os testes, utilize o seguinte comando:
+```
+npm test
+```
+
+### O que é Testado
+
+Os testes cobrem os seguintes cenários:
+- **Criação de Usuário**: (`POST /api/auth/signup`)
+  - Usuários podem ser registrados com sucesso.
+  - Um erro é retornado se o CPF já estiver registrado.
+- **Autenticação**: (`POST /api/auth/signin`)
+  - Usuários podem se autenticar com sucesso utilizando as credenciais corretas.
+  - Um erro é retornado se a senha estiver incorreta.
+- **Listagem de Usuários**: (`GET /api/users`)
+  - Apenas usuários autenticados podem acessar a lista de usuários.
+
+Os testes garantem que:
+- O fluxo de criação e autenticação de usuários funciona corretamente.
+- A proteção de rotas autenticadas está implementada.
 
 ### Exemplos de Testes com Insomnia
 

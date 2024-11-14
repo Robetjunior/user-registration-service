@@ -52,8 +52,12 @@ exports.updateUser = async (id, userData) => {
   const user = await User.findByPk(id);
   if (!user) throw new Error('Usuário não encontrado');
 
-  const hashedPassword = userData.senha ? await bcrypt.hash(userData.senha, 10) : user.senha;
-  await user.update({ ...userData, senha: hashedPassword, data_atualizacao: new Date() });
+  // Criptografar a senha se for fornecida no update
+  if (userData.senha) {
+    userData.senha = await bcrypt.hash(userData.senha, 10);
+  }
+
+  await user.update({ ...userData, data_atualizacao: new Date() });
 
   return user;
 };
