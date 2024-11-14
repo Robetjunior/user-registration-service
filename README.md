@@ -41,7 +41,7 @@ SECRET_KEY=minha-chave-secreta
 ```
 4. **Execute a Aplicação**
 ```
-npm run dev
+npm run start
 ```
 ## Documentação no Swagger
 Para acessar a documentação interativa da API, utilize o Swagger UI disponível no seguinte endpoint:
