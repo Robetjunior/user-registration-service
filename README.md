@@ -73,8 +73,8 @@ Através desta interface, você pode explorar e testar os endpoints da API de fo
 - Body:
 ```json
 {
- "cpf": "12345678901",
- "senha": "senhaSegura"
+ "cpf": "12345678900",
+ "senha": "novaSenha123"
 }
 ```
 
@@ -85,6 +85,19 @@ Resultado esperado:
   "token": "seu_token_jwt"
 }
 ```
+
+## Testes
+
+Este projeto inclui testes automatizados para as rotas de autenticação e gerenciamento de usuários.
+
+### Executando os Testes
+
+Para executar os testes, utilize o seguinte comando:
+
+```bash
+npm test
+```
+
 [Meu Perfil no Linkedin: ][(https://www.linkedin.com/in/jose-roberto/)](https://www.linkedin.com/in/jos%C3%A9-roberto-dev/)
 
 
