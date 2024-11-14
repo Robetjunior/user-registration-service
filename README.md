@@ -11,6 +11,8 @@ API RESTful para gerenciamento de usuários utilizando Node.js, Express, Sequeli
 - JWT (Json Web Token)
 - bcryptjs
 - express-validator
+- Amazon Web Services (AWS)
+ - Amazon RDS (Relational Database Service)
 
 ## Requisitos
 - Node.js (versão 14 ou superior)
