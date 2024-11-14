@@ -35,6 +35,13 @@ const options = {
             status: { type: 'string', enum: ['Ativo', 'Removido'] },
           },
         },
+        AuthResponse: {
+          type: 'object',
+          properties: {
+            message: { type: 'string' },
+            token: { type: 'string' },
+          },
+        },
       },
       securitySchemes: {
         bearerAuth: {
@@ -56,11 +63,11 @@ const options = {
 const swaggerSpec = swaggerJsdoc(options);
 
 function setupSwagger(app) {
-  app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-  app.get('/api-docs.json', (req, res) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.send(swaggerSpec);
-  });
+    app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+    app.get('/api-docs.json', (req, res) => {
+      res.setHeader('Content-Type', 'application/json');
+      res.send(swaggerSpec);
+    });
 }
-
-module.exports = setupSwagger;
+  
+  module.exports = setupSwagger;
