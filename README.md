@@ -78,6 +78,6 @@ Resultado esperado:
   "token": "seu_token_jwt"
 }
 ```
-[Meu Perfil no Linkedin: ][(https://www.linkedin.com/in/joao-silva/)](https://www.linkedin.com/in/jos%C3%A9-roberto-dev/)
+[Meu Perfil no Linkedin: ][(https://www.linkedin.com/in/jose-roberto/)](https://www.linkedin.com/in/jos%C3%A9-roberto-dev/)
 
 
