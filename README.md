@@ -67,6 +67,7 @@ npm run dev
  "cpf": "12345678901",
  "senha": "senhaSegura"
 }
+```
 
 Resultado esperado:
 ```
