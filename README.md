@@ -78,8 +78,6 @@ Resultado esperado:
   "token": "seu_token_jwt"
 }
 ```
+[Meu Perfil no Linkedin: ][(https://www.linkedin.com/in/joao-silva/)](https://www.linkedin.com/in/jos%C3%A9-roberto-dev/)
 
-Listar Usuários (/users):
-URL: http://localhost:8080/api/users
-Método: GET
-Headers: x-access-token: seu_token_jwt
+
