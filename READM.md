@@ -11,6 +11,9 @@ API RESTful para gerenciamento de usuários utilizando Node.js, Express, Sequeli
 - JWT (Json Web Token)
 - bcryptjs
 - express-validator
+- Amazon Web Services (AWS)
+  - Amazon RDS (Relational Database Service)
+- Swagger (Documentação da API)
 
 ## Requisitos
 - Node.js (versão 14 ou superior)
@@ -41,6 +44,14 @@ SECRET_KEY=minha-chave-secreta
 ```
 npm run dev
 ```
+## Documentação da API (Swagger)
+A documentação da API está disponível através do Swagger. Para acessá-la, siga os passos:
+
+Após iniciar a aplicação, abra o navegador e acesse:
+```
+http://localhost:8080/api-docs
+```
+Utilize a interface do Swagger para explorar os endpoints e testar a API de forma interativa.
 
 ## Endpoints da API
 
@@ -67,6 +78,7 @@ npm run dev
  "cpf": "12345678901",
  "senha": "senhaSegura"
 }
+```
 
 Resultado esperado:
 ```
@@ -75,8 +87,3 @@ Resultado esperado:
   "token": "seu_token_jwt"
 }
 ```
-
-Listar Usuários (/users):
-URL: http://localhost:8080/api/users
-Método: GET
-Headers: x-access-token: seu_token_jwt

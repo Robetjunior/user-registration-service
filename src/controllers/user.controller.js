@@ -5,6 +5,47 @@ const jwt = require('jsonwebtoken');
 
 const SECRET_KEY = 'minha-chave-secreta'; // Certifique-se de proteger esta chave
 
+/**
+ * @swagger
+ * /auth/signup:
+ *   post:
+ *     summary: Cria um novo usuário
+ *     tags: [Autenticação]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               cpf:
+ *                 type: string
+ *               nome:
+ *                 type: string
+ *               data_nascimento:
+ *                 type: string
+ *                 format: date
+ *               senha:
+ *                 type: string
+ *               endereco_rua:
+ *                 type: string
+ *               endereco_numero:
+ *                 type: string
+ *               endereco_bairro:
+ *                 type: string
+ *               endereco_cidade:
+ *                 type: string
+ *               endereco_estado:
+ *                 type: string
+ *               endereco_cep:
+ *                 type: string
+ *     responses:
+ *       201:
+ *         description: Usuário criado com sucesso
+ *       400:
+ *         description: Requisição inválida
+ */
+
 exports.signup = async (req, res) => {
   try {
     const { cpf, nome, data_nascimento, senha, endereco_rua, endereco_numero, endereco_bairro, endereco_cidade, endereco_estado, endereco_cep } = req.body;

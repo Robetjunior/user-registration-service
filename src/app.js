@@ -1,15 +1,19 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const cors = require("cors");
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 const sequelize = require('./config/db.config');
-const userRoutes = require("./routes/user.routes"); // Importar as rotas
+const userRoutes = require('./routes/user.routes');
+const setupSwagger = require('./swagger'); // Importação do Swagger
 const app = express();
-const User = require("./models/user.model");
+const User = require('./models/user.model');
 
 app.use(cors());
 app.use(bodyParser.json());
 
-// Sincroniza o banco de dados
+// Configuração do Swagger
+setupSwagger(app);
+
+// Sincronização do banco de dados
 (async () => {
   try {
     await sequelize.authenticate();
@@ -20,7 +24,7 @@ app.use(bodyParser.json());
     console.log('Tabela User criada ou alterada com sucesso.');
 
     // Registrar rotas
-    app.use('/api', userRoutes); // Usando um prefixo '/api'
+    app.use('/api', userRoutes);
 
     const PORT = process.env.PORT || 8080;
     app.listen(PORT, () => {
