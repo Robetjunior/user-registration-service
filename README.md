@@ -23,7 +23,7 @@ API RESTful para gerenciamento de usuários utilizando Node.js, Express, Sequeli
 
 1. **Clone o Repositório**
 ```
-git clone https://github.com/Robetjunior/user-registration-service cd seu-repositorio
+git clone https://github.com/Robetjunior/user-registration-service
 ```
 
 2. **Instale as Dependências**
