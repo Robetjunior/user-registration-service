@@ -12,7 +12,8 @@ API RESTful para gerenciamento de usuários utilizando Node.js, Express, Sequeli
 - bcryptjs
 - express-validator
 - Amazon Web Services (AWS)
- - Amazon RDS (Relational Database Service)
+- Amazon RDS (Relational Database Service)
+- Supertest (biblioteca para testes de APIs)
 
 ## Requisitos
 - Node.js (versão 14 ou superior)
@@ -22,7 +23,7 @@ API RESTful para gerenciamento de usuários utilizando Node.js, Express, Sequeli
 
 1. **Clone o Repositório**
 ```
-git clone https://github.com/seu-usuario/seu-repositorio.git cd seu-repositorio
+git clone https://github.com/Robetjunior/user-registration-service
 ```
 
 2. **Instale as Dependências**
